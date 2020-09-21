@@ -1,0 +1,112 @@
+.layout {
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.header {
+  height: 85px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  box-shadow: 0px 3px 16px var(--accent-color-trans);
+  border-bottom: 1px solid var(--accent-color2-trans);
+  transition: height .3s;
+}
+
+.backButton {
+  border: 1px solid var(--accent-color);
+  border-radius: .5rem;
+  position: fixed;
+  right: 79%;
+  top: 2.2rem;
+  padding: 0.5rem;
+  height: auto;
+  transition: top .3s;
+}
+
+.backButton:hover {
+  border-color: aliceblue;
+}
+
+.backButtonScroll {
+  border: none;
+  font-size: .8rem;
+  top: .5rem;
+  transition: top .3s;
+}
+
+.headerScroll {
+  height: 38px;
+  transition: height .3s;
+}
+
+.siteName {
+  color: var(--accent-color);
+  text-shadow: var(--accent-shadow);
+  text-transform: uppercase;
+  letter-spacing: 1.4rem;
+  font-size: 2.5rem;
+  font-weight: normal;
+  transition: font-size .3s;
+}
+
+.headerScroll .siteName {
+  font-size: 1.05rem;
+  letter-spacing: 1rem;
+  transition: font-size .3s;
+}
+
+.siteName em {
+  letter-spacing: -0.0777rem;
+  font-family: 'Georgia', serif;
+}
+
+.gold {
+  color: var(--accent-color2);
+  text-shadow: var(--accent-shadow3);
+  font-size: 2.55rem;
+  font-weight: 500;
+  transition: font-size .4s;
+}
+
+.headerScroll .gold {
+  font-size: 1.1rem;
+  transition: font-size .3s;
+}
+
+.grid {
+  margin: 85px auto 0 auto;
+  max-width: 1280px;
+  padding-top: 1rem;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 2rem;
+  text-shadow: var(--text-shadow);
+  text-align: center;
+}
+
+.compareGrid {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer {
+  height: 42px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-shadow: var(--text-shadow);
+  box-shadow: 0px -3px 16px var(--accent-color-trans);
+  border-top: 1px solid var(--accent-color2-trans);
+}

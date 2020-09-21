@@ -1,0 +1,36 @@
+.navTop {
+  position: static;
+  top: 0;
+  transition: top .1.2s;
+}
+
+.navScroll {
+  position: sticky;
+  top: 1.7rem;
+  transition: top 1.2s;
+}
+
+.content h1 {
+  color: var(--accent-color2);
+}
+
+.content h2 {
+  color: var(--accent-color);
+}
+
+.prevNext {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  position: fixed;
+  bottom: 66px;
+  z-index: 100;
+}
+
+.prev {
+  right: 90%;
+}
+
+.next {
+  left: 90%;
+}

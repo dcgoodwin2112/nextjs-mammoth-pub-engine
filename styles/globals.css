@@ -1,16 +1,62 @@
+:root {
+  --primary-color: white;
+  --secondary-color: black;
+  --accent-color: deeppink;
+  --accent-color-trans: rgba(255, 20, 147, 0.32);
+  --accent-color2: gold;
+  --accent-color2-trans: rgba(255, 215, 0, 0.13);
+  --text-shadow:
+    0px -7px 7px rgba(255, 255, 255, 0.07),
+    7px 0px 7px rgba(255, 255, 255, 0.07),
+    0px 7px 7px rgba(255, 255, 255, 0.07),
+    -7px 0px 7px rgba(255, 255, 255, 0.07);
+  --accent-shadow:
+    0px -7px 16px rgba(255, 0, 255, 0.22),
+    7px 0px 16px rgba(255, 0, 255, 0.22),
+    0px 7px 16px rgba(255, 0, 255, 0.22),
+    -7px 0px 16px rgba(255, 0, 255, 0.22);
+  --accent-shadow2:
+    0px -7px 16px rgba(255, 0, 255, 0.52),
+    7px 0px 16px rgba(255, 0, 255, 0.52),
+    0px 7px 16px rgba(255, 0, 255, 0.52),
+    -7px 0px 16px rgba(255, 0, 255, 0.52);
+  --accent-shadow3:
+    0px -7px 26px rgba(255, 0, 255, 0.76),
+    7px 0px 26px rgba(255, 0, 255, 0.76),
+    0px 7px 26px rgba(255, 0, 255, 0.76),
+    -7px 0px 26px rgba(255, 0, 255, 0.76);
+}
+
+
 html,
 body {
+  scroll-padding-top: 85px;
+  background-color: var(--secondary-color);
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+h2,
+h3,
+h4 {
+  font-family: Georgia, serif;
+  text-shadow: var(--text-shadow);
+}
+
 a {
-  color: inherit;
+  color: var(--accent-color);
+  text-shadow: var(--accent-shadow);
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-color2);
+  text-shadow: var(--accent-shadow2);
 }
 
 * {
   box-sizing: border-box;
+
 }
