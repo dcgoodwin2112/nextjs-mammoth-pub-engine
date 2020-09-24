@@ -5,6 +5,7 @@
   --accent-color-trans: rgba(255, 20, 147, 0.32);
   --accent-color2: gold;
   --accent-color2-trans: rgba(255, 215, 0, 0.13);
+  --accent-color3: aliceblue;
   --text-shadow:
     0px -7px 7px rgba(255, 255, 255, 0.07),
     7px 0px 7px rgba(255, 255, 255, 0.07),
@@ -26,7 +27,6 @@
     0px 7px 26px rgba(255, 0, 255, 0.76),
     -7px 0px 26px rgba(255, 0, 255, 0.76);
 }
-
 
 html,
 body {
@@ -56,7 +56,22 @@ a:hover {
   text-shadow: var(--accent-shadow2);
 }
 
+em,
+i,
+strong,
+s {
+  color: var(--accent-color2);
+  text-shadow: var(--accent-shadow2);
+}
+em.underline {
+  font-style: normal;
+  border-bottom: 1px dotted var(--accent-color3);
+}
+td {
+  border: 1px solid var(--accent-color3);
+  padding: 1rem;
+}
+
 * {
   box-sizing: border-box;
-
 }

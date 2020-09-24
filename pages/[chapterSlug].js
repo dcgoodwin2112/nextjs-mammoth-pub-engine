@@ -25,12 +25,11 @@ export default function chapter({
 
   useEffect(() => {
     window.addEventListener("scroll", (e) => {
-      window.scrollY >= 100
+      window.scrollY >= 25
         ? setNavPos("navScroll")
         : setNavPos("navTop");
     });
   }, []);
-
   return (
     <Layout>
       <Head>
@@ -96,7 +95,6 @@ export default function chapter({
 export async function getStaticProps({ params }) {
   const content = await getChapterContent(params.chapterSlug);
   const navLinks = getChapterNavLinks();
-  console.log(content);
   return {
     props: {
       ...content,

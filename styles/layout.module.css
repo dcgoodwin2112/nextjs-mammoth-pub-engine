@@ -29,7 +29,7 @@
 }
 
 .backButton:hover {
-  border-color: aliceblue;
+  border-color: var(--accent-color3);
 }
 
 .backButtonScroll {
@@ -63,6 +63,8 @@
 .siteName em {
   letter-spacing: -0.0777rem;
   font-family: 'Georgia', serif;
+  color: var(--accent-color);
+  text-shadow: var(--accent-shadow);
 }
 
 .gold {
@@ -88,7 +90,7 @@
   grid-template-columns: 1fr 3fr 1fr;
   gap: 2rem;
   text-shadow: var(--text-shadow);
-  text-align: center;
+  text-align: left;
 }
 
 .compareGrid {

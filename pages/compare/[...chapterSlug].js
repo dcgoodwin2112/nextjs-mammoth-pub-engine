@@ -1,27 +1,40 @@
 import Layout from "../../components/layout";
+import Nav from "../../components/nav";
 import {
   getChapterContent,
   getCompareChapterSlugs,
+  getChapterNavLinks,
 } from "../../lib/chapters.js";
-import styles from "../../styles/[...chapterSlug].module.css";
 
 export default function ChapterCompare({
   chapter1,
   chapter2,
   chapter3,
+  navLinks,
   chapterSlug,
 }) {
   return (
     <Layout compareGrid={true} backSlug={chapterSlug[0]}>
       <div dangerouslySetInnerHTML={chapter1.html} />
-      { chapter2 &&
-        <div dangerouslySetInnerHTML={chapter2.html} />
-      }
+      {chapter2 && <div dangerouslySetInnerHTML={chapter2.html} />}
+      {!chapter3 ? (
+        <Nav
+          links={navLinks}
+          header="Compare Another"
+          position="left"
+          type="compareThirdNav"
+          chapterSlug={chapter1.slug}
+          chapterSlug2={chapter2.slug}
+        />
+      ) : (
+        <div dangerouslySetInnerHTML={chapter3.html} />
+      )}
     </Layout>
   );
 }
 
 export async function getStaticProps({ params }) {
+  const navLinks = getChapterNavLinks();
   const chapter1 = params.chapterSlug[0]
     ? await getChapterContent(params.chapterSlug[0])
     : ``;
@@ -34,6 +47,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       chapterSlug: params.chapterSlug,
+      navLinks: navLinks,
       chapter1: chapter1,
       chapter2: chapter2,
       chapter3: chapter3,

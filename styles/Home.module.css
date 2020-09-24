@@ -1,4 +1,14 @@
-.container {
+.chapters {
+  width: 100%;
+  text-align: center;
+}
+.chapters ul {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+/* .container {
   min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
@@ -120,4 +130,4 @@
     width: 100%;
     flex-direction: column;
   }
-}
+} */

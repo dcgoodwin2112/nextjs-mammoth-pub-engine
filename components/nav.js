@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "../styles/nav.module.css";
 
-export default function Nav({ links, header, position, type, chapterSlug }) {
+export default function Nav({ links, header, position, type, chapterSlug, chapterSlug2 }) {
   const [navCollapse, setNavCollapse] = useState("open");
 
   const handleClick = (e) => {
@@ -16,6 +16,14 @@ export default function Nav({ links, header, position, type, chapterSlug }) {
       return type == "compareNav" && link.chapterSlug == chapterSlug
         ? false
         : true;
+    })
+    .filter((link) => {
+      if (type == "compareThirdNav") {
+        if (link.chapterSlug == chapterSlug || link.chapterSlug == chapterSlug2) {
+          return false;
+        }
+      }
+      return true;
     })
     .map((link) => {
       switch (type) {
@@ -38,7 +46,7 @@ export default function Nav({ links, header, position, type, chapterSlug }) {
         case "versionNav":
           return (
             <VersionLink
-              key={link.chapterSlug}
+              key={link.slug}
               slug={link.slug}
               title={link.title}
               version={link.version}
@@ -51,6 +59,16 @@ export default function Nav({ links, header, position, type, chapterSlug }) {
               slug={link.chapterSlug}
               title={link.title}
               chapterSlug={chapterSlug}
+            />
+          );
+        case "compareThirdNav":
+          return (
+            <CompareThirdLink
+              key={`${link.chapterSlug}/${link.chapterSlug2}`}
+              slug={link.chapterSlug}
+              title={link.title}
+              chapterSlug={chapterSlug}
+              chapterSlug2={chapterSlug2}
             />
           );
         default:
@@ -102,6 +120,14 @@ function VersionLink({ title, slug, version }) {
 function CompareLink({ title, slug, chapterSlug }) {
   return (
     <Link href={`/compare/${chapterSlug}/${slug}`}>
+      <a>{title}</a>
+    </Link>
+  );
+}
+
+function CompareThirdLink({ title, slug, chapterSlug, chapterSlug2 }) {
+  return (
+    <Link href={`/compare/${chapterSlug}/${chapterSlug2}/${slug}`}>
       <a>{title}</a>
     </Link>
   );
